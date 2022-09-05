@@ -1,0 +1,11 @@
+@use "../foundation/index" as *;
+
+.l-main {
+  width: 100%;
+  margin: 0 auto;
+  font-family: $kaku-font;
+  @include breakpoint(pc) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

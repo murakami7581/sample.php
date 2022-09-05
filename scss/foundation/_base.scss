@@ -1,0 +1,14 @@
+@use "../foundation/index" as *;
+
+
+body {
+  background-image: url(./images/background_sp.png);
+  background-repeat: repeat-y;
+  background-size: contain;
+  @include breakpoint(pc) {
+    background-image: url(./images/background_pc.png);
+    background-repeat: repeat-y;
+    background-size: contain;
+  }
+}
+

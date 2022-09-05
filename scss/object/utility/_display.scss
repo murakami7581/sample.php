@@ -1,0 +1,36 @@
+@use "../../foundation/index" as *;
+
+.u-disp {
+  &--pc-none {
+    @include breakpoint(pc) {
+      display: none;
+    }
+  }
+  &--pc-only {
+    display: none;
+    @include breakpoint(tablet) {
+      display: none;
+    }
+    @include breakpoint(pc) {
+      display: block;
+    }
+  }
+  &--sp-only {
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+  &--sp-none {
+    display: none;
+    @include breakpoint(tablet) {
+      display: block;
+    }
+  }
+}
+
+.u-disp--pc-only--inline-block {
+  @extend .u-disp--pc-only;
+  @include breakpoint(pc) {
+    display: inline-block;
+  }
+}

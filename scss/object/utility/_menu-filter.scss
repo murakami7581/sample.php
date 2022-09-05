@@ -1,0 +1,22 @@
+// メニュー画面オープン時の左端のフィルター通常時は透明⇒クリック時半透明
+//クラス自体はbodyタグに付与
+.u-menu-filter::before {
+  content: " ";
+  pointer-events: none; //透明時のフィルター下のイベントを実行させる
+  position: fixed;
+  top:50px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0; //フワッとアニメーションさせる為、opacityで消す
+  transition: 0.7s ease-in-out;
+  z-index: 4;
+}
+//メニューオープン時の状態
+.u-menu-filter.is-active {
+  // overflow: hidden;
+  &::before {
+    pointer-events: auto; //半透明字はフィルター下のイベントを実行させない
+    opacity: 1; //メニューオープン時フワッっとフィルターを出す
+  }
+}
